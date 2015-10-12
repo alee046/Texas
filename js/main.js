@@ -4,8 +4,9 @@ var ranks = new Array ("01", "02", "03", "04", "05", "06","07","08","09","10","1
 var suits = new Array ("c", "d", "h", "s");
 var deck = new Array ();
 var playerOne = [];
-var playerTwo = new Array ();
-var board = new Array ()
+var playerTwo = [];
+var board = [];
+var burnBoard = [];
 ///Deck functions
 function makeDeck(m){
 
@@ -34,7 +35,7 @@ function shuffle(n) {
       deck[k] = temp;
     }
 }
-
+//Dirty dealings
 function dealHands( ) {
 
   if (deck.length > 0){
@@ -42,7 +43,27 @@ function dealHands( ) {
     playerTwo.push(deck.shift());
     playerOne.push(deck.shift());
     playerTwo.push(deck.shift());
- } else
+ 	} else
     return null;
-	
 }
+
+function dealFlop(){
+	if (deck.length > 0){
+	burnBoard.push(deck.shift());
+	board.push(deck.shift());
+	board.push(deck.shift());
+	board.push(deck.shift());
+	} else
+	return null;
+}
+
+function deal(){
+	if (deck.length >0){
+		burnBoard.push(deck.shift());
+			board.push(deck.shift());
+	} else
+	return null;
+}
+
+
+
