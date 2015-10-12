@@ -40,9 +40,13 @@ function dealHands( ) {
 
   if (deck.length > 0){
     playerOne.push(deck.shift());
+    $("#playerOneHand").append('<img src=assets/' + playerOne[0] + ".png>");
     playerTwo.push(deck.shift());
+    $("#playerTwoHand").append('<img src=assets/' + playerTwo[0] + ".png>");
     playerOne.push(deck.shift());
+    $("#playerOneHand").append('<img src=assets/' + playerOne[1] + ".png>");
     playerTwo.push(deck.shift());
+    $("#playerTwoHand").append('<img src=assets/' + playerTwo[1] + ".png>");
  	} else
     return null;
 }

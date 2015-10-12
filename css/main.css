@@ -1,0 +1,26 @@
+body{
+	background-color:#355e3b;
+}
+#playerOneHand{
+	margin:auto;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}
+#playerTwoHand{
+	margin:auto;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}
+#boardDisp{
+	margin:auto;
+	height:100px;
+	width:600px;
+
+	border:solid 1px white;
+}
+img{
+	height:75px;
+	width:50px;
+}
