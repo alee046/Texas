@@ -13,11 +13,16 @@ body{
 	width:200px;
 	border:solid 1px white;
 }
+#burnBoardDisp{
+	margin:auto;
+	height:100px;
+	width:300px;
+	border:solid 1px white;
+}
 #boardDisp{
 	margin:auto;
 	height:100px;
 	width:600px;
-
 	border:solid 1px white;
 }
 img{

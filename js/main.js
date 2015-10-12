@@ -54,17 +54,32 @@ function dealHands( ) {
 function dealFlop(){
 	if (deck.length > 0){
 	burnBoard.push(deck.shift());
+	$("#burnBoardDisp").append('<img src=assets/' + burnBoard[0] + ".png>");
 	board.push(deck.shift());
+	$("#boardDisp").append('<img src=assets/' + board[0] + ".png>");
 	board.push(deck.shift());
+	$("#boardDisp").append('<img src=assets/' + board[1] + ".png>");
 	board.push(deck.shift());
+	$("#boardDisp").append('<img src=assets/' + board[2] + ".png>");
 	} else
 	return null;
 }
 
-function deal(){
+function dealTurn(){
 	if (deck.length >0){
 		burnBoard.push(deck.shift());
-			board.push(deck.shift());
+		$("#burnBoardDisp").append('<img src=assets/' + burnBoard[1] + ".png>");
+		board.push(deck.shift());
+		$("#boardDisp").append('<img src=assets/' + board[3] + ".png>");
+	} else
+	return null;
+}
+function dealRiver(){
+	if (deck.length >0){
+		burnBoard.push(deck.shift());
+		$("#burnBoardDisp").append('<img src=assets/' + burnBoard[2] + ".png>");
+		board.push(deck.shift());
+		$("#boardDisp").append('<img src=assets/' + board[4] + ".png>");
 	} else
 	return null;
 }
