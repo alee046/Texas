@@ -7,10 +7,12 @@ var playerOne = [];
 var playerTwo = [];
 var board = [];
 var burnBoard = [];
-var playerOneBank = 100000
-var playerTwoBank = 100000
-var pot = 0
-var player = 1
+var playerOneBank = 100000;
+var playerTwoBank = 100000;
+var tPot = 0;
+var rPot= 0;
+var player = 1;
+var turnCount = 0;
 ///Bet functions
 function playerTurn(){
 	if(player===1){
@@ -19,48 +21,71 @@ function playerTurn(){
 	}else {
 		$('#Turn').html("Player One");
 			player+=1;	
+	} turnCount+=1;
+}
+function bettingRound(){
+	if(turnCount%2===0){
+			$('#roundPotValue').val(0);
 	}
 }
 function makeBet(){
+	bettingRound();
 
 	if (player===1){
-	
 		playerOneBank= playerOneBank-parseInt($("#bet-input").val(),10);
 		$('#playerOneBankVal').val(playerOneBank);
-		pot=pot+ parseInt($("#bet-input").val(),10);
-		$('#potValue').val(pot);
+		rPot=rPot+ parseInt($("#bet-input").val(),10);
+		$('#roundPotValue').val(rPot);
+		tPot=tPot+ parseInt($("#bet-input").val(),10);
+		$('#totalPotValue').val(tPot);
 		playerTurn();
 
 		}else{
 		
 		playerTwoBank= playerTwoBank-parseInt($("#bet-input").val(),10);
 		$('#playerTwoBankVal').val(playerTwoBank);
-		pot=pot+ parseInt($("#bet-input").val(),10);
-		$('#potValue').val(pot);
+		rPot=rPot+ parseInt($("#bet-input").val(),10);
+		$('#roundPotValue').val(rPot);
+		tPot=tPot+ parseInt($("#bet-input").val(),10);
+		$('#totalPotValue').val(tPot);
+		
 		playerTurn();
-	}
+
+		}
+
+		
 
 };
 function makeCall(){
+	bettingRound();
 	if (player===1){
-			playerOneBank=playerOneBank-pot;
+			playerOneBank=playerOneBank-rPot;
 		$('#playerOneBankVal').val(playerOneBank);
-		pot=pot+ parseInt($("#bet-input").val(),10);
-		$('#potValue').val(pot);
-
-
+		rPot=rPot+ parseInt($("#bet-input").val(),10);
+		$('#roundPotValue').val(rPot);
+		tPot=tPot+ parseInt($("#bet-input").val(),10);
+		$('#totalPotValue').val(tPot);
+		playerTurn();
+		
+$("#roundPotValue").val(0);
 
 		} else{
 	
-	playerTwoBank=playerTwoBank-pot;
+	playerTwoBank=playerTwoBank-rPot;
 		$('#playerTwoBankVal').val(playerTwoBank);
-		pot=pot+ parseInt($("#bet-input").val(),10);
-		$('#potValue').val(pot);
+		rPot=rPot+ parseInt($("#bet-input").val(),10);
+		$('#roundPotValue').val(rPot);
+		tPot=tPot+ parseInt($("#bet-input").val(),10);
+		$('#totalPotValue').val(tPot);
 		playerTurn();
+
 			}
+	$("#roundPotValue").val(0);
+
 };
 function makeBank(){
-	$('#potValue').val(pot);
+	$('#roundPotValue').val(rPot);
+	$('#totalPotValue').val(tPot);
 	$('#playerOneBankVal').val(playerOneBank);
 	$('#playerTwoBankVal').val(playerTwoBank);
 }
