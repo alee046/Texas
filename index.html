@@ -5,9 +5,14 @@
 	<title>Document</title>
 <link rel="stylesheet" href="css/main.css">
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
+<script src= "js/main.js"> </script>
 </head>
+<div id="bank">
+<input type="text" id='potValue'/>
+<input type="text" id='playerOneBankVal'/>
+<input type="text" id='playerTwoBankVal' />
 
+</div>
 <div id="playerOneHand">
 </div>
 <div id="boardDisp">
@@ -22,5 +27,7 @@
 <button id="dealR" onclick="dealRiver()">River</button>
 <button id="shuffle" onclick="shuffle()">Shuffle</button>
 <button id="start" onclick="makeDeck()">start</button>
-<script src= "js/main.js"> </script>
+<input id="bet-input" type="text" placeholder="Bet Munnyz">
+<input id="bet-move" onclick="makeBet()" type="button" value="Bet">
+
 </html>

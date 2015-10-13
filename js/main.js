@@ -7,6 +7,24 @@ var playerOne = [];
 var playerTwo = [];
 var board = [];
 var burnBoard = [];
+var playerOneBank = 100000
+var playerTwoBank = 100000
+var pot = 0
+///Bet functions
+function makeBet(){
+	playerOneBank= playerOneBank-parseInt($("#bet-input").val(),10);
+	$('#playerOneBankVal').val(playerOneBank);
+	pot=pot+ parseInt($("#bet-input").val(),10);
+	$('#potValue').val(pot);
+};
+function makeCall(){
+	playerTwoBank=playerTwoBank-parseInt($("#potValue").val(pot),10)
+}
+function makeBank(){
+	$('#potValue').val(pot);
+	$('#playerOneBankVal').val(playerOneBank);
+	$('#playerTwoBankVal').val(playerTwoBank);
+}
 ///Deck functions
 function makeDeck(m){
 
@@ -19,6 +37,7 @@ function makeDeck(m){
 			
 		
 	};
+	makeBank();
 }
 function shuffle(n) {
 	n=(Math.random()*100)

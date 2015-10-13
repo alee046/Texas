@@ -1,6 +1,11 @@
 body{
 	background-color:#355e3b;
 }
+#potval{
+	height: 200px;
+	width:200px;
+	border:solid 1px white;
+}
 #playerOneHand{
 	margin:auto;
 	height:100px;
