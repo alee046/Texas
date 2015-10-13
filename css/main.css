@@ -30,6 +30,12 @@ body{
 	width:600px;
 	border:solid 1px white;
 }
+#turn{
+	margin:auto;
+	height:100px;
+	width:100px;
+	border:solid 1px white;
+}
 img{
 	height:75px;
 	width:50px;

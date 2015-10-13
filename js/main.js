@@ -10,15 +10,28 @@ var burnBoard = [];
 var playerOneBank = 100000
 var playerTwoBank = 100000
 var pot = 0
+var player =
 ///Bet functions
+function playerTurn(){
+	if(player===1){
+		$('#Turn').html("Player One");
+			player-=1;
+	}else {
+		$('#Turn').html("Player Two");
+			player+=1;	
+	}
+}
 function makeBet(){
-	playerOneBank= playerOneBank-parseInt($("#bet-input").val(),10);
+	player= player-parseInt($("#bet-input").val(),10);
 	$('#playerOneBankVal').val(playerOneBank);
 	pot=pot+ parseInt($("#bet-input").val(),10);
 	$('#potValue').val(pot);
 };
 function makeCall(){
-	playerTwoBank=playerTwoBank-parseInt($("#potValue").val(pot),10)
+	playerTwoBank=playerTwoBank-pot;
+	$('#playerTwoBankVal').val(playerTwoBank);
+	pot=pot+ parseInt($("#bet-input").val(),10);
+	$('#potValue').val(pot);
 }
 function makeBank(){
 	$('#potValue').val(pot);
