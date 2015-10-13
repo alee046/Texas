@@ -23,14 +23,19 @@ function playerTurn(){
 			player+=1;	
 	} turnCount+=1;
 }
-function bettingRound(){
-	if(turnCount%2===0){
-			$('#roundPotValue').val(0);
-	}
+function checkMove(){
+	if(isNaN($('#bet-input'))==true){
+			rPot=0;
+			$('#roundPotValue').val(rPot);
+			console.log("player checks")
+			playerTurn();
+	}else console.log("cant chec");
+
+
+
 }
 function makeBet(){
-	bettingRound();
-
+	
 	if (player===1){
 		playerOneBank= playerOneBank-parseInt($("#bet-input").val(),10);
 		$('#playerOneBankVal').val(playerOneBank);
@@ -53,11 +58,10 @@ function makeBet(){
 
 		}
 
-		
+	
 
 };
 function makeCall(){
-	bettingRound();
 	if (player===1){
 			playerOneBank=playerOneBank-rPot;
 		$('#playerOneBankVal').val(playerOneBank);
@@ -67,7 +71,7 @@ function makeCall(){
 		$('#totalPotValue').val(tPot);
 		playerTurn();
 		
-$("#roundPotValue").val(0);
+
 
 		} else{
 	
@@ -80,8 +84,8 @@ $("#roundPotValue").val(0);
 		playerTurn();
 
 			}
-	$("#roundPotValue").val(0);
-
+rPot=0;
+$('#roundPotValue').val(0);
 };
 function makeBank(){
 	$('#roundPotValue').val(rPot);
