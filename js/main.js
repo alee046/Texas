@@ -152,7 +152,7 @@ function dealHands( ) {
 function dealFlop(){
 	if (deck.length > 0){
 	burnBoard.push(deck.shift());
-	$("#burnBoardDisp").append('<img src=assets/' + burnBoard[0].suit+burnBoard[0].rank + ".png>");
+	$("#burnBoardDisp").append('<img src=assets/backcard.jpg>');
 	board.push(deck.shift());
 	$("#boardDisp").append('<img src=assets/' + board[0].suit+board[0].rank + ".png>");
 	board.push(deck.shift());
@@ -166,7 +166,7 @@ function dealFlop(){
 function dealTurn(){
 	if (deck.length >0){
 		burnBoard.push(deck.shift());
-		$("#burnBoardDisp").append('<img src=assets/' + burnBoard[1].suit+burnBoard[1].rank + ".png>");
+		$("#burnBoardDisp").append('<img src=assets/backcard.jpg>');
 		board.push(deck.shift());
 		$("#boardDisp").append('<img src=assets/' + board[3].suit+board[3].rank + ".png>");
 	} else
@@ -175,7 +175,7 @@ function dealTurn(){
 function dealRiver(){
 	if (deck.length >0){
 		burnBoard.push(deck.shift());
-		$("#burnBoardDisp").append('<img src=assets/' + burnBoard[2].suit+burnBoard[2].rank + ".png>");
+		$("#burnBoardDisp").append('<img src=assets/backcard.jpg>');
 		board.push(deck.shift());
 		$("#boardDisp").append('<img src=assets/' + board[4].suit+board[4].rank + ".png>");
 	} else
