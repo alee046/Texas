@@ -16,7 +16,9 @@ var tPot = 0;
 var rPot= 0;
 var player = 1;
 var turnCount = 0;
-var handVal = 
+var handVal = 0;
+var cardEval1 = [];
+var cardEval2 = [];
 ///Bet functions
 function playerTurn(){
 	if(player===1){
@@ -25,8 +27,9 @@ function playerTurn(){
 	}else {
 		$('#Turn').html("Player One");
 			player+=1;	
-	} turnCount+=1;
+	}
 }
+
 function checkMove(){
 	if(isNaN($('#bet-input'))==true){
 			rPot=0;
@@ -100,7 +103,10 @@ function makeBank(){
 
 
 ///Deck functions
-
+function deckId(){
+	for (i=0; i<=51;i++)
+		deck[i].id=i
+}
 
 function makeDeck(m){
 
@@ -116,6 +122,7 @@ function makeDeck(m){
 			
 		
 	};
+	deckId();
 	makeBank();
 }
 function deckId(){
@@ -184,7 +191,12 @@ function dealRiver(){
 		$("#boardDisp").append('<img src=assets/' + board[4].suit+board[4].rank + ".png>");
 	} else
 	return null;
+	handEval();
 }
 
 
-
+///winconditions
+function handEval(){
+cardEval1=$.merge( $.merge( [], playerOne ), board );
+cardEval2=$.merge( $.merge( [], playerTwo ), board );
+}
