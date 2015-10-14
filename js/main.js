@@ -16,7 +16,7 @@ var tPot = 0;
 var rPot= 0;
 var player = 1;
 var turnCount = 0;
-var h
+var handVal = 
 ///Bet functions
 function playerTurn(){
 	if(player===1){
@@ -118,6 +118,10 @@ function makeDeck(m){
 	};
 	makeBank();
 }
+function deckId(){
+	for (i=0; i<=51;i++)
+		deck[i].id=i
+}
 function shuffle(n) {
 	n=(Math.random()*100)
   var i, j, k;
@@ -182,7 +186,5 @@ function dealRiver(){
 	return null;
 }
 
-function imageReference(){
-	return playerOne[0].suit+playerOne[0].rank
-}
+
 
