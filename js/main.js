@@ -200,3 +200,16 @@ function handEval(){
 cardEval1=$.merge( $.merge( [], playerOne ), board );
 cardEval2=$.merge( $.merge( [], playerTwo ), board );
 }
+
+function findFlush(){
+	function countInArray(cardEval1, "c") {
+    var count = 0;
+    for (var i = 0; i < cardEval2.length; i++) {
+        if (cardEval2[i].suit === "c") {
+            count++;
+        }
+    }
+    return count;
+}
+
+}
