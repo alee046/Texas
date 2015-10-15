@@ -7,7 +7,7 @@
  * Option to choose game modes (no shuffling, regular ).
  * Game is designed for players to practice betting strategy.
 
- User Stories
+ User Stories/Profiles
  ------------
  * Newbie Casual: Just wants to play for fun (game for user is luck-based).
  Plays for enjoyment (add novelty value to the game).
@@ -16,26 +16,35 @@
  *Competitive: 2 friends playing for contest. (starting chip value/hands won). Will have anteblinds to reinforce
  * Veteran : Bored of traditional game and wants a spin on classic Texas Holdem
 
-
-
-*As a user, when I visit the site, I see a start button, so that i can start the game.
+MVPS
+------
 *As a user, when I click start on the main page, I go to the game page.
+*As a user, when I go to the game page I see the game board set up: cards will shuffle and be dealt to the two players hands.
+*As a user, I see a game board set up that includes two hands and a deck.
+*As a user, when I visit the site, I see a start button, so that i can start the game.
+*As a user, when I go to the game page I see the game board set up: cards will shuffle and be dealt to the two players hands.
+*As a user, when I go to the game page I see a deal button that I can click in order to begin the game/deal.
+*As a user, I want an indicator to tell me who's turn it is.
+*As a user, I want a graphic display of my bank and the potValues.
+*As a user, when I go to the game page I see action buttons at the button of the screen which dictate what move I will decide to make.
+*As a user, I want a gameboard with clear layout.
 
 
+ICEBOX
+------
+*As a user, I want some dope game modes so I can be l33t and shit.
+*As a user, I want a message box so I can talk shit whilst owning the opposing player with a hand that he can see.
+*As a user, I want a button in the middle of the gameboard that when pressed, a shiny disco ball will rise FROM the floor with colorful lights blinking everywhere. If this function is not implemented this game is absolutely pointless.----THIS WILL BE MY #1 MVP
 *As a user, when I visit the site, I see a game mode selection choice, so that I can play the game regular or reverse.
 *As a new user who is not familiar with Texas Hold 'em, when I visit the site I see a link to a README explanation of the rules.
 
 
-*As a user, when I go to the game page I see the game board set up: cards will shuffle and be dealt to the two players hands.
-
-*As a user, I see a game board set up that includes two hands and a deck.
-
-
-*As a user, when I go to the game page I see a deal button that I can click in order to begin the game/deal.
-*As a user, when I go to the game page I see action buttons at the button of the screen which dictate what move I will decide to make.
 
 
 Game Modes
 ----------
 Classik: No betting stages, player cards are revealed, just preflop bets.
 Reverse: Burn cards revealed. Players can't see their own cards. (Players bet on what they might potentially have).
+
+Pictures
+--------
