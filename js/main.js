@@ -1,30 +1,50 @@
 console.log("js loaded");
 
 ///Globals
+
+//Deck variables
 var ranks = new Array ("02", "03", "04", "05", "06","07","08","09","10","11","12","13","14");
 var suits = new Array ("c", "d", "h", "s");
 var deck = [];
+
+
+//Board variables
 var playerOne = [];
-var playerTwo = [];/// make object
-var rankEval = [];
-var suiteEval = [];
+var playerTwo = [];/// cards are objects
 var board = [];
 var burnBoard = [];
+
+//Betting functions
 var playerOneBank = 100000;
 var playerTwoBank = 100000;
-var tPot = 0;
-var rPot= 0;
-var player = 1;
-var turnCount = 0;
+var tPot = 0;//total pot
+var rPot= 0;//round pot = goes to 0 after each round
+
+
+var player = 1;//turn function
+var turnCount = 0;//tracks turn count
 var handVal = 0;
-var cardEval1 = [];
-var cardEval2 = [];
-var checkRank1 = [];
-var checkSuit1 = [];
-var checkID1 = [];
-var checkRank2 = [];
-var checkSuit2 = [];
-var checkID2 = [];
+
+//winning logic arrays
+var rankEval = []//sorts 
+var suiteEval = [];
+
+var cardEval1 = [];//evaluates possible hands for p1
+var cardEval2 = [];//evaluates possible hands for p2
+//evaluators
+var checkRank1 = [];//sorts smallest to largest
+var checkSuit1 = [];//sorts suits
+var checkID1 = [];//sorts id ---(for royalflush or straightflush)
+var checkRank2 = [];//
+var checkSuit2 = [];//same as above except for player 2
+var checkID2 = [];//
+
+//single High card function//
+var parseRank1 = [];//parse numbers of rank (- the 0)
+var parseRank2 = [];
+var highCard1 = 0;
+var highCard2 = 0;
+//flush suite count functions
 var hearts1= 0;
 var spades1= 0 ;
 var clovers1= 0;
@@ -34,6 +54,7 @@ var spades2= 0 ;
 var clovers2= 0;
 var diamonds2= 0;
 ///Bet functions
+
 function playerTurn(){
 	if(player===1){
 		$('#Turn').html("Player Two");
@@ -210,24 +231,14 @@ function dealRiver(){
 
 
 ///winconditions
-function handEval(){
+function handEval(){//sorts into hand evaluate array
 cardEval1=$.merge( $.merge( [], playerOne ), board );
 cardEval2=$.merge( $.merge( [], playerTwo ), board );
+sortHand();
 }
 
-function flush(x) {
-	var x;
-    var count = 0;
-    for (var i = 0; i < x.length; i++) {
-        if (cardEval1[i].suit === "c") {
-            count++;
-        }
 
-    }
-    return count;
-}
-
-function sortHand(){
+function sortHand(){//automattically sorts into 3 arrays for rank suite and id#
 
 	for (var i = 0 ; i<cardEval1.length; i++){
 		checkSuit1.push(cardEval1[i].suit);
@@ -244,7 +255,7 @@ function sortHand(){
         checkID2.sort()
  	}
 }
-function noRepeat(x) {
+function noRepeat(x) {//cardRank no repeats
   var i, l = x.length, result = [];
   for (i = 0; i < l; i++) {
     if (result[result.length - 1] != x[i]) {
@@ -253,7 +264,12 @@ function noRepeat(x) {
   }
   return result;
 }
-function straight(){
+function noDupes(){
+	noRepeat(checkRank1);
+	noRepeat(checkRank2);
+}
+function straight(){//return if player has straight
+
 	for(i=0; i<=2; i++)
 	if(checkRank2[i] == checkRank2[i+1]-1 && checkRank2[i+1]-1 == checkRank2[i+2]-2&& checkRank2[i+2]-2 == checkRank2[i+3]-3&&	checkRank2[i+3]-3 == checkRank2[i+4]-4)
 		console.log("player2 has straight");
@@ -264,7 +280,13 @@ function straight(){
 		console.log("player1 has straight");
 	else console.log("no straight");
 }
-function checkSuits(){
+
+//flush functions
+function flush() {
+	checkSuits();
+	checkFlush();
+}
+function checkSuits(){//sorts suits into different variables
 	for (i=0; i<checkSuit1.length; i++){
 		if (checkSuit1[i] === "c"){
 			clovers1 ++;
@@ -285,10 +307,61 @@ function checkSuits(){
 		}
 	}
 }
-function checkFlush(){
+function checkFlush(){//logs who has flush
 	if (clovers1>=5 || diamonds1>=5 || hearts1>=5 || diamonds1>=5){
 		console.log("player1 flush");
 	}if (clovers2>=5 || diamonds2>=5 || hearts2>=5 || diamonds2>=5){
 		console.log("player2 flush");
 	}
 }
+//Single Value functions
+function noZero1(){
+	for (i=0; i<checkRank1.length; i++){
+		parseRank1.push(parseInt((checkRank1[i]))) ///////Take out 0s in the values.
+	}
+}
+function noZero2(){
+	for (i=0; i<checkRank2.length; i++){
+		parseRank2.push(parseInt((checkRank2[i])))
+	}
+}
+function noZero(){
+	noZero1();
+	noZero2();
+}
+
+
+function LargestNum1(){
+highCard1=0;
+
+for (i=0; i<=highCard1;i++){
+    if (parseRank1[i]>highCard1) {
+        var highCard1=parseRank1[i];
+      
+    } 
+
+ 
+} return highCard1;
+}
+
+function LargestNum2(){
+highCard2=0;
+
+	for (i=0;i<=highCard2;i++){
+		if (parseRank2[i]>highCard2){
+			var highCard2=parseRank2[i];
+			
+		}
+	} return highCard2;
+}
+
+function winSingle(){
+	if (LargestNum1()==LargestNum2()){
+		console.log("tie");
+	}if (LargestNum1()>LargestNum2()){
+        console.log("player 1 wins w"+" "+ LargestNum1())
+} if (LargestNum2()>LargestNum1()){
+       console.log("player 2 wins w"+ " " + LargestNum2());  
+}
+}
+
