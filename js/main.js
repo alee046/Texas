@@ -286,9 +286,9 @@ function checkSuits(){
 	}
 }
 function checkFlush(){
-	if (clovers1===5 || diamonds1===5 || hearts1===5 || diamonds1===5){
+	if (clovers1>=5 || diamonds1>=5 || hearts1>=5 || diamonds1>=5){
 		console.log("player1 flush");
-	}if (clovers2===5 || diamonds2===5 || hearts2===5 || diamonds2===5){
+	}if (clovers2>=5 || diamonds2>=5 || hearts2>=5 || diamonds2>=5){
 		console.log("player2 flush");
 	}
 }
