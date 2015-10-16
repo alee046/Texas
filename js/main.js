@@ -303,10 +303,7 @@ function winStack(){
 function checkWinningHands(x){
 	for(i=0;i<=p1HandScores.length;i++){
 		if(x===1){
-			$('#Hands').html("High Card")
-		}
-		if(x===2){
-			$('#Hands').html("pairs");
+			$('#Hands').html("High Card");
 		}if (x===3){
 			$('#Hands').html("2 pairs");
 		}if (x===4){
@@ -541,13 +538,13 @@ function findMax(theObj) {
 function highestPair(){
 	var highPair1=findMax(pair1());
 	var highPair2=findMax(pair2());
-	if(highPair1>highPair2){
+	if(parseInt(highPair1)>parseInt(highPair2)){
 		p1HandScores.push(2);
-		$('#Hands').append(highPair1);
+		$('#Hands').html("PlayerOne HighPair");
 
-	}if(highPair2>highPair1){
+	}if(parseInt(highPair1)<parseInt(highPair2)){
 		p2HandScores.push(2);
-		$('#Hands').append(highPair2);
+		$('#Hands').html("PlayerTwo HighPair");
 	}
 }
 
@@ -560,7 +557,6 @@ function checkMulti(){//evaluates for pairs,trips,twopairs,&fullhouses fckyea
 	for (i=0; i<=14;i++){
 		if (counts1[i]===2){
         pairCount1++;
-        
 		} if (counts1[i]===3){
 		p1HandScores.push(4);
 		} if( pairCount1 >1 ) {
@@ -574,14 +570,13 @@ function checkMulti(){//evaluates for pairs,trips,twopairs,&fullhouses fckyea
 	} for (i=0; i<=14; i++){
 		if (counts2[i]===2){
              pairCount2++;
-         
 		} if (counts2[i]===3){
 			p2HandScores.push(4)
 		} if (pairCount2 >1){
 			p2HandScores.push(3);
 		} if (counts2[i]===3 && pairCount2 ===1){
 			p2HandScores.push(7);
-		} if (counts1[i]===4){
+		} if (counts2[i]===4){
 			p2HandScores.push(8);
 		}
 	}
