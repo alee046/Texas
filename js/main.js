@@ -67,6 +67,7 @@ var diamonds2= 0;
 /////////////////////////////////////////////////////////////////////
 ///Bet functions
 function playerTurn(){ ////Determines who's move
+
 	if(player===1){
 
 		$('#Turn').html("Player Two");
@@ -80,6 +81,7 @@ function playerTurn(){ ////Determines who's move
 }
 
 function checkMove(){
+
 	if(isNaN($('#bet-input'))==true){
 
 			rPot=0;
@@ -119,7 +121,7 @@ function makeBet(){ ////Make a bet
 function makeCall(){  ///Call the Bet
 	if (player===1){
 
-			playerOneBank=playerOneBank-rPot;
+	playerOneBank=playerOneBank-rPot;
 		$('#playerOneBankVal').val(playerOneBank);
 		rPot=rPot+ parseInt($("#bet-input").val(),10);
 		$('#roundPotValue').val(rPot);
@@ -127,7 +129,6 @@ function makeCall(){  ///Call the Bet
 		$('#totalPotValue').val(tPot);
 		playerTurn();
 		
-
 
 		} else{
 	
@@ -141,7 +142,9 @@ function makeCall(){  ///Call the Bet
 
 			}
 rPot=0;
+
 $('#roundPotValue').val(0);
+
 };
 
 
@@ -250,9 +253,9 @@ function dealRiver(){
 		board.push(deck.shift());
 		$("#boardDisp").append('<img src=assets/' + board[4].suit+board[4].rank + ".png>");
 	} 
-	handEval();
-	winStack();
-	chickenDinner();
+		handEval();
+		winStack();
+		chickenDinner();
 
 }
 
@@ -263,11 +266,11 @@ function dealRiver(){
 
 function handEval(){//sorts into hand evaluate array
 
-cardEval1=$.merge( $.merge( [], playerOne ), board );
-cardEval2=$.merge( $.merge( [], playerTwo ), board );
-sortHand();
-console.log("checking for winner...")
-}
+	cardEval1=$.merge( $.merge( [], playerOne ), board );
+	cardEval2=$.merge( $.merge( [], playerTwo ), board );
+	sortHand();
+	console.log("checking for winner...")
+	}
 
 
 function sortHand(){//automatically sorts into 3 arrays for rank suite and id#
@@ -368,11 +371,12 @@ function straight(){//return if player has straight
 				&& reCheck1[i+3]-3 == reCheck1[i+4]-4){
 				
 				p1HandScores.push(5);
+
 			}
 			if((reCheck2[i] == reCheck2[i+1]-1 
-					&& reCheck2[i+1]-1 == reCheck2[i+2]-2
-					&& reCheck2[i+2]-2 == reCheck2[i+3]-3
-					&&	reCheck2[i+3]-3 == reCheck2[i+4]-4)){
+				&& reCheck2[i+1]-1 == reCheck2[i+2]-2
+				&& reCheck2[i+2]-2 == reCheck2[i+3]-3
+				&&	reCheck2[i+3]-3 == reCheck2[i+4]-4)){
 					
 				p2HandScores.push(5);
 }
@@ -489,9 +493,13 @@ function checkSingle(){///Determine high-card winner
 	if (LargestNum1()==LargestNum2()){
 
 	}if (LargestNum1()>LargestNum2()){
+
 p1HandScores.push(1);
+
 } if (LargestNum2()>LargestNum1()){
+
 p2HandScores.push(1);
+
 }
 }
 /////////////////////////////////////////////////////////////////////
@@ -539,10 +547,12 @@ function highestPair(){
 	var highPair1=findMax(pair1());
 	var highPair2=findMax(pair2());
 	if(parseInt(highPair1)>parseInt(highPair2)){
+
 		p1HandScores.push(2);
 		$('#Hands').html("PlayerOne HighPair");
 
 	}if(parseInt(highPair1)<parseInt(highPair2)){
+
 		p2HandScores.push(2);
 		$('#Hands').html("PlayerTwo HighPair");
 	}
@@ -555,29 +565,41 @@ function checkMulti(){//evaluates for pairs,trips,twopairs,&fullhouses fckyea
 	var pairCount1=0;
 	var pairCount2=0;
 	for (i=0; i<=14;i++){
+		
 		if (counts1[i]===2){
         pairCount1++;
+
 		} if (counts1[i]===3){
 		p1HandScores.push(4);
+
 		} if( pairCount1 >1 ) {
         p1HandScores.push(3);
+
 		} if (counts1[i]===3 && pairCount1 ===1){
 		p1HandScores.push(7);
+
 		} if (counts1[i]===4){
+
 		p1HandScores.push(8);
 		}
 
 	} for (i=0; i<=14; i++){
+
 		if (counts2[i]===2){
              pairCount2++;
+
 		} if (counts2[i]===3){
 			p2HandScores.push(4)
+
 		} if (pairCount2 >1){
 			p2HandScores.push(3);
+
 		} if (counts2[i]===3 && pairCount2 ===1){
 			p2HandScores.push(7);
+
 		} if (counts2[i]===4){
 			p2HandScores.push(8);
+
 		}
 	}
 }	
