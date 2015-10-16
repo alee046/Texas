@@ -39,6 +39,9 @@ var checkRank2 = [];//
 var checkSuit2 = [];//same as above except for player 2
 var checkID2 = [];//
 
+//Pair, Trip values
+var pairCount = 0;
+var tripCount = 0;
 //single High card function//
 var parseRank1 = [];//parse numbers of rank (- the 0)
 var parseRank2 = [];
@@ -365,3 +368,5 @@ function winSingle(){
 }
 }
 
+
+//Pair & Trips Function
