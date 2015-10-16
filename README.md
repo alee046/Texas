@@ -32,9 +32,8 @@ MVPS
 
 ICEBOX
 ------
-*As a user, I want some dope game modes so I can be l33t and shit.
-*As a user, I want a message box so I can talk shit whilst owning the opposing player with a hand that he can see.
-*As a user, I want a button in the middle of the gameboard that when pressed, a shiny disco ball will rise FROM the floor with colorful lights blinking everywhere. If this function is not implemented this game is absolutely pointless.----THIS WILL BE MY #1 MVP
+*As a user, I want some dope game modes.
+*As a user, I want a message box so I can talk crap whilst owning the opposing player with a hand that he/she can see.
 *As a user, when I visit the site, I see a game mode selection choice, so that I can play the game regular or reverse.
 *As a new user who is not familiar with Texas Hold 'em, when I visit the site I see a link to a README explanation of the rules.
 
@@ -43,8 +42,9 @@ ICEBOX
 
 Game Modes
 ----------
-Classik: No betting stages, player cards are revealed, just preflop bets.
+Classic: No betting stages, player cards are revealed, just preflop bets.
 Reverse: Burn cards revealed. Players can't see their own cards. (Players bet on what they might potentially have).
 
 Pictures
 --------
+idk

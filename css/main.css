@@ -6,6 +6,7 @@ body{
 	width:200px;
 	border:solid 1px white;
 }
+
 #playerOneHand{
 	margin:auto;
 	height:100px;
@@ -35,6 +36,7 @@ body{
 	height:100px;
 	width:100px;
 	border:solid 1px white;
+	color:red;
 }
 
 img{
