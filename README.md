@@ -47,4 +47,4 @@ Reverse: Burn cards revealed. Players can't see their own cards. (Players bet on
 
 Pictures
 --------
-idk
+[Imgur](http://i.imgur.com/mrNq60T.jpg?1)
