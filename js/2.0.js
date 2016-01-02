@@ -58,10 +58,13 @@ function makeDeck(){
 }
 
 function dealHands( ) {
+  k=0;
+  while (k<2){
     for (i=0; i < players.length; i++){
       players[i].hand.push(table.deck.shift())
-      players[i].hand.push(table.deck.shift())
-          }
+    }
+  k++;
+  }
 }
 setPlayers();
 makeDeck();
