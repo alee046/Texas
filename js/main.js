@@ -25,7 +25,7 @@ var player = 1;//turn function
 var turnCount = 0;//tracks turn count
 
 //winning logic arrays
-var rankEval = []//sorts 
+var rankEval = []//sorts
 var suiteEval = [];
 
 var cardEval1 = [];//evaluates possible hands for p1
@@ -74,7 +74,7 @@ function playerTurn(){ ////Determines who's move
 	}else {
 
 		$('#Turn').html("Player One");
-			player+=1;	
+			player+=1;
 	}
 
 }
@@ -94,7 +94,7 @@ function checkMove(){
 }
 
 function makeBet(){ ////Make a bet
-	
+
 	if (player===1){
 		var current=playerOneBank;
 		var Icurrent="#playerOneBankVal";
@@ -112,7 +112,7 @@ function makeBet(){ ////Make a bet
 
 		}
 
-	
+
 
 
 
@@ -126,11 +126,11 @@ function makeCall(){  ///Call the Bet
 		tPot=tPot+ parseInt($("#bet-input").val(),10);
 		$('#totalPotValue').val(tPot);
 		playerTurn();
-		
+
 
 
 		} else{
-	
+
 	playerTwoBank=playerTwoBank-rPot;
 		$('#playerTwoBankVal').val(playerTwoBank);
 		rPot=rPot+ parseInt($("#bet-input").val(),10);
@@ -229,7 +229,7 @@ function dealFlop(){
 	$("#boardDisp").append('<img src=assets/' + board[1].suit+board[1].rank + ".png>");
 	board.push(deck.shift());
 	$("#boardDisp").append('<img src=assets/' + board[2].suit+board[2].rank + ".png>");
-	} 
+	}
 }
 
 function dealTurn(){
@@ -239,7 +239,7 @@ function dealTurn(){
 		$("#burnBoardDisp").append('<img src=assets/backcard.jpg>');
 		board.push(deck.shift());
 		$("#boardDisp").append('<img src=assets/' + board[3].suit+board[3].rank + ".png>");
-	} 
+	}
 
 }
 function dealRiver(){
@@ -249,7 +249,7 @@ function dealRiver(){
 		$("#burnBoardDisp").append('<img src=assets/backcard.jpg>');
 		board.push(deck.shift());
 		$("#boardDisp").append('<img src=assets/' + board[4].suit+board[4].rank + ".png>");
-	} 
+	}
 	handEval();
 	winStack();
 	chickenDinner();
@@ -275,15 +275,15 @@ function sortHand(){//automatically sorts into 3 arrays for rank suite and id#
 	for (var i = 0 ; i<cardEval1.length; i++){
 		checkSuit1.push(cardEval1[i].suit);
 		checkSuit1.sort()
-		checkRank1.push(cardEval1[i].rank); 
-		checkRank1.sort() 
-        checkID1.push(cardEval1[i].id); 
+		checkRank1.push(cardEval1[i].rank);
+		checkRank1.sort()
+        checkID1.push(cardEval1[i].id);
         checkID1.sort()
         checkSuit2.push(cardEval2[i].suit);
         checkSuit2.sort()
-		checkRank2.push(cardEval2[i].rank);  
+		checkRank2.push(cardEval2[i].rank);
 		checkRank2.sort()
-        checkID2.push(cardEval2[i].id); 
+        checkID2.push(cardEval2[i].id);
         checkID2.sort()
  	}
 }
@@ -335,7 +335,7 @@ function chickenDinner(){
 	else if(Math.max.apply(null,p1HandScores)===Math.max.apply(null,p2HandScores)){
 		$('#Winner').html("split pot");
 		checkWinningHands(p1Max)+checkWinningHands(p2Max)
-	}	
+	}
 	else {$('#Winner').html("player2 Wins");
 		checkWinningHands(p2Max);}
 	}
@@ -362,18 +362,18 @@ function straight(){//return if player has straight
 		var reCheck1=noRepeat(parseRank1);
 		var reCheck2=noRepeat(parseRank2);
 			for(i=0; i<=2; i++){
-				if (reCheck1[i] == reCheck1[i+1]-1 
+				if (reCheck1[i] == reCheck1[i+1]-1
 				&& reCheck1[i+1]-1 == reCheck1[i+2]-2
 				&& reCheck1[i+2]-2 == reCheck1[i+3]-3
 				&& reCheck1[i+3]-3 == reCheck1[i+4]-4){
-				
+
 				p1HandScores.push(5);
 			}
-			if((reCheck2[i] == reCheck2[i+1]-1 
+			if((reCheck2[i] == reCheck2[i+1]-1
 					&& reCheck2[i+1]-1 == reCheck2[i+2]-2
 					&& reCheck2[i+2]-2 == reCheck2[i+3]-3
 					&&	reCheck2[i+3]-3 == reCheck2[i+4]-4)){
-					
+
 				p2HandScores.push(5);
 }
 }
@@ -381,17 +381,17 @@ function straight(){//return if player has straight
 function straightF(){//straight flushes
 
 	for(i=0; i<=checkID1.length; i++)
-	if (checkID1[i] == checkID1[i+1]-1 
+	if (checkID1[i] == checkID1[i+1]-1
 		&& checkID1[i+1]-1 == checkID1[i+2]-2
 		&& checkID1[i+2]-2 == checkID1[i+3]-3
 		&& checkID1[i+3]-3 == checkID1[i+4]-4){
 
 		p2HandScores.push(9);
-	}else if((checkID2[i] == checkID2[i+1]-1 
+	}else if((checkID2[i] == checkID2[i+1]-1
 		&& checkID2[i+1]-1 == checkID2[i+2]-2
 		&& checkID2[i+2]-2 == checkID2[i+3]-3
 		&&	checkID2[i+3]-3 == checkID2[i+4]-4)){
-		
+
 		p1HandScores.push(9);}
 }
 
@@ -429,11 +429,11 @@ function checkSuits(){
 function checkFlush(){//logs who has flush
 
 	if (clovers1>=5 || diamonds1>=5 || hearts1>=5 || diamonds1>=5){
-	
+
 		p1HandScores.push(6);
 
 	}if (clovers2>=5 || diamonds2>=5 || hearts2>=5 || diamonds2>=5){
-	
+
 		p2HandScores.push(6);
 	}
 }
@@ -465,10 +465,10 @@ highCard1=0;
 for (i=0; i<=highCard1;i++){
     if (parseRank1[i]>highCard1) {
         var highCard1=parseRank1[i];
-      
-    } 
 
- 
+    }
+
+
 } return highCard1;
 }
 
@@ -478,7 +478,7 @@ highCard2=0;
 	for (i=0;i<=highCard2;i++){
 		if (parseRank2[i]>highCard2){
 			var highCard2=parseRank2[i];
-			
+
 		}
 	} return highCard2;
 }
@@ -531,7 +531,7 @@ function findMax(theObj) {
 			max = theObj[k];
             maxKey = k;
 		}
-	}		
+	}
 	return maxKey;
 }
 
@@ -580,6 +580,6 @@ function checkMulti(){//evaluates for pairs,trips,twopairs,&fullhouses fckyea
 			p2HandScores.push(8);
 		}
 	}
-}	
+}
 
 

@@ -6,15 +6,55 @@ body{
 	width:200px;
 	border:solid 1px white;
 }
-
-#playerOneHand{
+#top{
 	margin:auto;
+	height:100px;
+	width:1000px;
+	border:solid 1px white;
+}
+#playerOneHand{
+	float:left;
 	height:100px;
 	width:200px;
 	border:solid 1px white;
 }
 #playerTwoHand{
-	margin:auto;
+	float:left;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}
+#playerThreeHand{
+	float:left;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}
+#playerFourHand{
+	float:left;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}
+#playerFiveHand{
+	float:left;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}
+#playerSixHand{
+	float:left;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}
+#playerSevenHand{
+	float:left;
+	height:100px;
+	width:200px;
+	border:solid 1px white;
+}#playerEightHand{
+	float:left;
 	height:100px;
 	width:200px;
 	border:solid 1px white;
