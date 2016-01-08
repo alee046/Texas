@@ -514,7 +514,8 @@ function pair2() {///^^^^
 	var counts2 = {},
 	    num;
 
-	for(var i = 0; i< parseRank2.length; i++) {
+	for(var i = 0; i< players.length; i++) {
+		var x = players[i].evaluator.rank
 	    num = parseRank2[i];
 	    counts2[num] = counts2[num] ? counts2[num]+1 : 1;
 
