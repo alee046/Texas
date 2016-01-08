@@ -157,7 +157,17 @@ function straight(x){
         }
   }
 }
-
+function straightF(x){//straight flushes
+  y=x.evaluator.id
+  for(i=0; i<2; i++)
+  if (y[i] == y[i+1]-1
+    && y[i+1]-1 == y[i+2]-2
+    && y[i+2]-2 == y[i+3]-3
+    && y[i+3]-3 == y[i+4]-4){
+    x.score =+ 9;
+    console.log(x.score + " Player" + x.player + " has a straight flush!");
+  }
+//////////////
 
 function dispHand(){
   for (i=0; i<players.length; i++){
@@ -178,6 +188,7 @@ sortHands();
 dispHand();
 console.log(table);
 console.log(players[i]);
+
 $( document ).ready(function() {
   renderHands();
   renderBoard();

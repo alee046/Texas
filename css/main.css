@@ -73,7 +73,7 @@ body{
 	border:solid 1px white;
 }
 #boardDisp{
-	margin:auto;
+	margin-left:100px;
 	height:100px;
 	width:600px;
 	border:solid 1px white;
@@ -87,6 +87,6 @@ body{
 }
 
 img{
-	height:75px;
-	width:50px;
+	height:100px;
+	width:75px;
 }
