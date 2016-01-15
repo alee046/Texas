@@ -10,7 +10,7 @@ The version on github pages is just a simulator with the win-check logic impleme
 5. Turn
 6. River
 7. Winner gets printed out on the top left hand side.
-8. 
+
 ![texas](https://i.imgur.com/67QPbhS.png)
 ####!!Coming soon!! Version 1.1
 - 2 players get 4 hands each
