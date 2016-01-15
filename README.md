@@ -9,6 +9,7 @@ The version on github pages is just a simulator with the win-check logic impleme
 5. Turn
 6. River
 7. Winner gets printed out on the top left hand side.
+![texas](https://i.imgur.com/67QPbhS.png)
 ####!!Coming soon!! Version 1.1
 - 2 players get 4 hands each
 - cards revealed in reverse order. (burn cards are revelead at first, with river, turn, and flop following)
