@@ -14,6 +14,6 @@ The version on github pages is just a simulator with the win-check logic impleme
 ![texas](https://i.imgur.com/67QPbhS.png)
 ####!!Coming soon!! Version 1.1
 - 2 players get 4 hands each
-- cards revealed in reverse order. (burn cards are revelead at first, with river, turn, and flop following)
+- Cards revealed in reverse order. (burn cards are revelead at first, with river, turn, and flop following)
 - Betting phase before each card reveal(player chooses on hand to "kill" and one hand to bet on)
 ![texas](https://i.imgur.com/1airCTA.png)
